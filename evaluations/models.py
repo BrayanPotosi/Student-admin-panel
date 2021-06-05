@@ -11,7 +11,7 @@ class Rubro(models.Model):
         return self.name
 
 class Evaluation(models.Model):
-    rubro = models.ForeignKey(Rubro, null=True, on_delete=models.SET)
+    rubro = models.ForeignKey(Rubro, null=True, on_delete=models.SET_NULL)
     score = models.IntegerField(blank=True, null=True)
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add=True)
