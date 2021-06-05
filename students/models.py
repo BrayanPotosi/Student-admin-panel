@@ -34,5 +34,5 @@ class Student(models.Model):
     updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f'{self.first_name} {self.last_name} @{self.username} V:{self.vertical}, C:{self.cohort}, T:{self.team}'
+        return f'{self.id}, {self.first_name} {self.last_name} {self.dni} {self.vertical}, {self.cohort}, {self.team}'
 

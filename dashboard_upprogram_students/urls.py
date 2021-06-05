@@ -19,5 +19,5 @@ from students import views as student_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('students', student_views.get_students(), name='students')
+    path('students', student_views.list_students, name='students')
 ]
