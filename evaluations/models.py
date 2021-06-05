@@ -11,11 +11,11 @@ class Rubro(models.Model):
         return self.name
 
 class Evaluation(models.Model):
-    rubro = models.ForeignKey(Rubro, on_delete=models.CASCADE)
+    rubro = models.ForeignKey(Rubro, null=True, on_delete=models.SET)
     score = models.IntegerField(blank=True, null=True)
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f'{self.student.first_name} - {self.rubro.name}: {self.score}'
+        return f'{self.student.first_name} - {self.rubro}: {self.score}'
