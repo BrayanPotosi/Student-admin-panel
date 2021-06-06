@@ -49,32 +49,33 @@
               </div>
 
               <div class="modal-body">
-                  <form style="display: flex; flex-direction: column" id="studentsform" action="/students">
+                  <form style="display: flex; flex-direction: column" id="studentsform" action="{% url 'create' %}" method="POST">
+                      {% csrf_token %}
                       <label for="fname">Nombre</label>
-                      <input type="text" id="fname" name="fname" required pattern="^[A-Za-z]+$">
+                      <input type="text" id="fname" name="fname" required pattern="^[A-Za-z]+$" placeholder="introduce el Nombre">
                       <label for="lname">Apellido</label>
-                      <input type="text" id="lname" name="lname" required pattern="^[A-Za-z]+$">
+                      <input type="text" id="lname" name="lname" required pattern="^[A-Za-z]+$" placeholder="introduce el Apellido">
                       <label for="fdni">Identificacion</label>
-                      <input type="number" id="fdni" name="fname">
+                      <input type="number" id="fdni" name="fdni" placeholder="introduce el numero de Identificacion ">
 
                       <label for="fvertical">Vertical</label>
-                        <select id="fvertical" name="Verticallist" form="studentsform">
+                        <select id="fvertical" name="fvertical" form="studentsform">
                             {% for vertical in vertical_list %}
-                                <option value="Seleccionar">{{ vertical.name }}</option>
+                                <option>{{ vertical.name }}</option>
                             {% endfor %}
                         </select>
 
-                      <label for="fCohort">Cohort</label>
-                        <select id="fCohort" name="Cohortlist" form="studentsform">
+                      <label for="fcohort">Cohort</label>
+                        <select id="fcohort" name="fcohort" form="studentsform">
                             {% for cohort in cohorts_list %}
-                                <option value="Seleccionar">{{ cohort.name }}</option>
+                                <option> {{ cohort.name }}</option>
                             {% endfor %}
                         </select>
 
-                      <label for="fTeam">Equipo</label>
-                        <select id="fTeam" name="Teamlist" form="studentsform">
+                      <label for="fteam">Equipo</label>
+                        <select id="fteam" name="fteam" form="studentsform">
                             {% for team in team_list %}
-                                <option value="Seleccionar">{{ team.name }}</option>
+                                <option>{{ team.name }}</option>
                             {% endfor %}
                         </select><br>
 
@@ -97,6 +98,7 @@
                     <th scope="col">Nombre</th>
                     <th scope="col">Apellido</th>
                     <th scope="col">Identificacion</th>
+                    <th scope="col">Username</th>
                     <th scope="col">Vertical</th>
                     <th scope="col">Cohort</th>
                     <th scope="col">Equipo</th>
@@ -110,6 +112,7 @@
                         <td>{{ student.first_name }}</td>
                         <td>{{ student.last_name }}</td>
                         <td>{{ student.dni }}</td>
+                        <td>{{ student.username}}</td>
                         <td>{{ student.vertical.name }}</td>
                         <td>{{ student.cohort.name }}</td>
                         <td>{{ student.team.name }}</td>
