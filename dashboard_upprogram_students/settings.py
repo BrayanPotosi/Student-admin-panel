@@ -12,9 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from pathlib import Path
 import environ
-import mimetypes
-
-mimetypes.add_type("text/css", ".css", True)
+import django_heroku
 
 env = environ.Env()
 environ.Env.read_env()
@@ -102,23 +100,23 @@ WSGI_APPLICATION = 'dashboard_upprogram_students.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'postgresql',
-#         'USER': 'admin',
-#         'PASSWORD': 'securepass',
-#         'HOST': 'db',
-#         'PORT': ''
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': env("DATABASE"),
+        'USER': env("DB_USER"),
+        'PASSWORD': ("DB_PASSWORD"),
+        'HOST': 'db',
+        'PORT': ''
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -183,3 +181,6 @@ SOCIAL_AUTH_TWITTER_SECRET=env("SOCIAL_AUTH_TWITTER_SECRET")
 # Github
 SOCIAL_AUTH_GITHUB_KEY=env("SOCIAL_AUTH_GITHUB_KEY")
 SOCIAL_AUTH_GITHUB_SECRET=env("SOCIAL_AUTH_GITHUB_SECRET")
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
