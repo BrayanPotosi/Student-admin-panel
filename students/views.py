@@ -47,6 +47,12 @@ def create_student(request):
 
             return redirect('students')
 
+        else:
+            form = student_form
+            return render(request=request, template_name='students.html', context={'form': form})
+
+    else:
+        pass
 
 def delete_student(request):
 
