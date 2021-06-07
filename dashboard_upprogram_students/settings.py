@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from pathlib import Path
 import environ
+import mimetypes
+
+mimetypes.add_type("text/css", ".css", True)
 
 env = environ.Env()
 environ.Env.read_env()
@@ -149,7 +152,8 @@ LOGIN_REDIRECT_URL = 'home'
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
