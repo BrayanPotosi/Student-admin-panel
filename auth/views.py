@@ -1,6 +1,12 @@
+from django.http.response import HttpResponse
 from django.shortcuts import redirect, render
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.decorators import login_required
+
+@login_required
+def HomeView(request):
+    return HttpResponse("Hola social auth")
 
 """Logout view"""
 def logout_view(request):

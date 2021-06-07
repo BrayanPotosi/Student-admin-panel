@@ -27,8 +27,15 @@
                         </button>
                     </form>
                 </div>
+                <div>                
+                    <div class="d-grid gap-2 social-btn">
+                        <button type="button" class="btn btn-outline-primary mt-3"><a href="{% url "social:begin" "facebook" %}">Login with facebook</a></button>
+                    </div>
+                    <div class="d-grid gap-2 social-btn">
+                        <button type="button" class="btn btn-outline-primary mt-3"><a href="{% url 'social:begin' 'github' %}">Login with Github</a></button>
+                    </div>
+                </div>
             </div>
         </div>
-
     </div>
 {% endblock content %}
