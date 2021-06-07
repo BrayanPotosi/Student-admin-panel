@@ -27,9 +27,9 @@ class Student(models.Model):
     last_name = models.CharField(max_length=50)
     username = models.CharField(max_length=50, unique=True)
     dni = models.CharField(max_length=50, unique=True)
-    vertical = models.ForeignKey(Vertical, on_delete=models.CASCADE)
-    cohort = models.ForeignKey(Cohort, on_delete=models.CASCADE)
-    team = models.ForeignKey(Team, on_delete=models.CASCADE)
+    vertical = models.ForeignKey(Vertical, on_delete=models.SET_NULL, null=True, blank=True)
+    cohort = models.ForeignKey(Cohort, null=True, on_delete=models.SET_NULL)
+    team = models.ForeignKey(Team, null=True, on_delete=models.SET_NULL)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
