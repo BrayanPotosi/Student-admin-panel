@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
 from students.models import Student
 from students.forms import FormStudent
 from random import randint
@@ -52,7 +52,8 @@ def create_student(request):
             return render(request=request, template_name='students.html', context={'form': form})
 
     else:
-        pass
+        return HttpResponse('Error: Get method is not allowed')
+
 
 def delete_student(request):
 
@@ -65,3 +66,6 @@ def delete_student(request):
 
     return redirect('students')
 
+
+def update_student(request):
+    pass
