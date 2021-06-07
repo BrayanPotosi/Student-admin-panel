@@ -20,5 +20,6 @@ from students import views as student_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('students', student_views.list_students, name='students'),
-    path('create-student', student_views.create_student, name='create')
+    path('create-student', student_views.create_student, name='create'),
+    path('delete-student', student_views.delete_student, name='delete')
 ]
