@@ -1,0 +1,28 @@
+﻿{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+Login
+{% endblock title %}
+
+{% block content %}
+
+    {% if error_msn %}
+        <div class="alert {{alert_type}}" role="alert">
+            {{error_msn}}
+        </div>
+    {% endif %}
+
+
+<div class="container">
+    <div class="row" style="justify-content:center">
+        <ul>
+            {% for evaluation in evaluations %}
+                <li>{{evaluation}}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+
+{% endblock content %}
