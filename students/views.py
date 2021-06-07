@@ -25,8 +25,6 @@ def create_student(request):
         if student_form.is_valid():
             data_form = student_form.cleaned_data
 
-            print(request.POST)
-
             first_name = data_form['first_name']
             last_name = data_form['last_name']
             dni = data_form['dni']
