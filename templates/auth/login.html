@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    Login
+{% endblock title %}
+
+{% block content %}
+
+    {% if error_msn %}
+        <div class="alert {{alert_type}}" role="alert">
+           {{error_msn}}
+        </div>
+    {% endif %}
+
+    <div class="container">
+        <div class="row" style="justify-content:center">
+            <div class="login_form" >
+                <h2>Login</h2>
+                <br>
+                <div>
+                    <form action="" method="POST" class="p-3 border border-2" >
+                        {% csrf_token %}
+                        {{form|crispy}}
+                        <button type="submit" class="btn btn-primary mt-3">
+                            Login
+                        </button>
+                    </form>
+                </div>
+                <div>                
+                    <div class="d-grid gap-2 social-btn">
+                        <button type="button" class="btn btn-outline-primary mt-3"><a href="{% url "social:begin" "facebook" %}">Login with facebook</a></button>
+                    </div>
+                    <div class="d-grid gap-2 social-btn">
+                        <button type="button" class="btn btn-outline-primary mt-3"><a href="{% url 'social:begin' 'github' %}">Login with Github</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

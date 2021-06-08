@@ -1,0 +1,8 @@
+.login_form {
+    width: 250px;
+    min-width: 250px;
+}
+
+.social-btn button a {
+    text-decoration: none;
+}

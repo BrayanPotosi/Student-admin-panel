@@ -1,0 +1,1 @@
+web: gunicorn dashboard_upprogram_students.wsgi --log-file -
