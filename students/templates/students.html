@@ -74,37 +74,12 @@
                         <td>
                             <ul style="display: flex; list-style: none ">
 
-                                <li style="margin-right: 4%"><button type="button" class="btn btn-primary"><img src="https://i.imgur.com/2USz32t.png"></button></li>
-
                                 <li style="margin-right: 4%" >
-
-                                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal2"><img src="https://i.imgur.com/bwSutQk.png"></button>
-
-                                    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
-                                      <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                          <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                              <span aria-hidden="true">&times;</span>
-                                            </button>
-                                          </div>
-                                          <div class="modal-body">
-                                              <form>
-
-                                              </form>
-                                          </div>
-                                          <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Save changes</button>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
+                                    <a href="{% url 'update' %}"><button type="button" class="btn btn-info" ><img src="https://i.imgur.com/bwSutQk.png"></button></a>
                                 </li>
 
                                 <li >
-                                    <form style="display: flex; flex-direction: column" id="studentdeleteform" action="{% url 'delete' %}" method="POST">
+                                    <form style="display: flex; flex-direction: column" id="delete_form" action="{% url 'delete' %}" method="POST">
                                         {% csrf_token %}
                                         <button type="submit" name="deleteb" class="btn btn-danger" value="{{ student.id }}"><img src="https://i.imgur.com/8lphSfP.png"></button>
                                     </form>
