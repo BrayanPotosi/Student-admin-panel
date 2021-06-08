@@ -1,3 +1,143 @@
-from django.shortcuts import render
-
+from django.shortcuts import render, redirect, HttpResponse
+from evaluations.models import Evaluation, Rubro
+from evaluations.forms import FormEvaluation, FormRubro,\
+    FormEvaluationCreate, FormEvaluationUpdate, FormRubroCreate, FormRubroDelete
 # Create your views here.
+
+
+def list_evaluation(request):
+    evaluations_list = Evaluation.objects.all()
+    form_evaluation = FormEvaluation()
+
+    return render(request, template_name='evaluations.html',
+                  context={
+                      'evaluations_list': evaluations_list,
+                      'form': form_evaluation
+                  })
+
+
+def create_evaluation(request):
+
+    if request.method == 'POST':
+
+        evaluation_form = FormEvaluationCreate(request.POST)
+
+        if evaluation_form.is_valid():
+            data_form = evaluation_form.cleaned_data
+            rubro = request.POST['rubro']
+            score = data_form['score']
+            student = request.POST['student']
+
+            evaluation = Evaluation(
+                rubro_id=rubro,
+                score=score,
+                student_id=student
+            )
+            evaluation.save()
+
+            return redirect('evaluations')
+
+        else:
+            evaluations_list = Evaluation.objects.all()
+
+            return render(request, template_name='evaluations.html',
+                          context={
+                              'form': evaluation_form,
+                              'evaluations_list': evaluations_list
+                          })
+
+    else:
+        return HttpResponse('Error: This method is not allowed')
+
+
+def delete_evaluation(request):
+
+    if request.method == 'POST':
+        evaluation_id = request.POST.get('deleteb')
+        evaluation = Evaluation.objects.get(pk=evaluation_id)
+        evaluation.delete()
+
+    return redirect('evaluations')
+
+
+def update_evaluation(request):
+
+    if request.method == 'POST':
+
+        evaluation_form = FormEvaluationUpdate(request.POST)
+
+        if evaluation_form.is_valid():
+
+            data_form = evaluation_form.cleaned_data
+            evaluation_id = request.POST.get('evaluation_id')
+            rubro = data_form['rubro']
+            score = data_form['score']
+            student = request.POST.get('student')
+
+            Evaluation.objects.filter(pk=evaluation_id).update(
+                rubro_id=rubro,
+                score=score,
+                student_id=student
+            )
+
+            return redirect('evaluations')
+
+        else:
+            return render(request, template_name='update_evaluation.html', context={'update_form': evaluation_form})
+
+    else:
+        evaluation_form = FormEvaluationUpdate()
+        return render(request, template_name='update_evaluation.html', context={'update_form': evaluation_form})
+
+
+def create_rubro(request):
+
+    if request.method == 'POST':
+
+        evaluations_list = Evaluation.objects.all()
+        rubro_form = FormRubro(request.POST)
+
+        if rubro_form.is_valid():
+            data_form = rubro_form.cleaned_data
+
+            name = data_form['name']
+
+            rubro = Rubro(name=name)
+            rubro.save()
+
+            return redirect('evaluations')
+
+        else:
+            return render(request, template_name='evaluations.html',
+                          context={
+                              'rubro_form': rubro_form,
+                              'evaluations_list': evaluations_list
+                          })
+
+    else:
+        rubro_form = FormRubro()
+        return render(request, template_name='evaluations.html', context={'rubro_form': rubro_form})
+
+
+def delete_rubro(request):
+
+    if request.method == 'POST':
+
+        evaluations_list = Evaluation.objects.all()
+        rubro_form = FormRubroDelete(request.POST)
+
+
+        if rubro_form.is_valid():
+
+            rubro_id = request.POST.get('name')
+            rubro = Rubro.objects.get(pk=rubro_id)
+            rubro.delete()
+
+        else:
+            return render(request, template_name='evaluations.html',
+                          context={
+                              'rubro_from': rubro_form,
+                              'evaluations_list': evaluations_list
+                          })
+
+    return redirect('evaluations')
