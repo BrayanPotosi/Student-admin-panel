@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def HomeView(request):
-    return HttpResponse("Hola social auth")
+    return redirect('students')
 
 """Logout view"""
 def logout_view(request):
@@ -30,7 +30,7 @@ def login_view(request):
                 else:
                     alert_type = 'alert-success'
                     error_msn = 'Login succesfully'
-                    # return redirect('students:path_route_name')
+                    return redirect('students')
         else:
             alert_type = 'alert-danger'
             error_msn = 'Ups!! something went worong'
