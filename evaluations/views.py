@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect, HttpResponse
+from django.contrib.auth.decorators import login_required
 from evaluations.models import Evaluation, Rubro
+
 from evaluations.forms import FormEvaluation, FormRubro,\
     FormEvaluationCreate, FormEvaluationUpdate, FormRubroCreate, FormRubroDelete
 # Create your views here.
 
-
+@login_required
 def list_evaluation(request):
     evaluations_list = Evaluation.objects.all()
     form_evaluation = FormEvaluation()
@@ -15,7 +17,7 @@ def list_evaluation(request):
                       'form': form_evaluation
                   })
 
-
+@login_required
 def create_evaluation(request):
 
     if request.method == 'POST':
@@ -49,7 +51,7 @@ def create_evaluation(request):
     else:
         return HttpResponse('Error: This method is not allowed')
 
-
+@login_required
 def delete_evaluation(request):
 
     if request.method == 'POST':
@@ -59,7 +61,7 @@ def delete_evaluation(request):
 
     return redirect('evaluations')
 
-
+@login_required
 def update_evaluation(request):
 
     if request.method == 'POST':
@@ -89,7 +91,7 @@ def update_evaluation(request):
         evaluation_form = FormEvaluationUpdate()
         return render(request, template_name='update_evaluation.html', context={'update_form': evaluation_form})
 
-
+@login_required
 def create_rubro(request):
 
     if request.method == 'POST':
@@ -118,7 +120,7 @@ def create_rubro(request):
         rubro_form = FormRubro()
         return render(request, template_name='evaluations.html', context={'rubro_form': rubro_form})
 
-
+@login_required
 def delete_rubro(request):
 
     if request.method == 'POST':
