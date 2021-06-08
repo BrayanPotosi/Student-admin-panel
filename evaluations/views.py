@@ -120,9 +120,10 @@ def create_rubro(request):
 
 
 def delete_rubro(request):
-    print(request.POST)
+
     if request.method == 'POST':
 
+        evaluations_list = Evaluation.objects.all()
         rubro_form = FormRubroDelete(request.POST)
 
 
@@ -133,6 +134,10 @@ def delete_rubro(request):
             rubro.delete()
 
         else:
-            return render(request, template_name='evaluations.html', context={'rubro_from': rubro_form})
+            return render(request, template_name='evaluations.html',
+                          context={
+                              'rubro_from': rubro_form,
+                              'evaluations_list': evaluations_list
+                          })
 
     return redirect('evaluations')
