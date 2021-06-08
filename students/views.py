@@ -17,7 +17,7 @@ def list_students(request):
                       'form': form_student
                   })
 
-
+@login_required
 def create_student(request):
 
     if request.method == 'POST':
@@ -58,7 +58,7 @@ def create_student(request):
     else:
         return HttpResponse('Error: this method is not allowed')
 
-
+@login_required
 def delete_student(request):
 
     if request.method == 'POST':
@@ -68,7 +68,7 @@ def delete_student(request):
 
     return redirect('students')
 
-
+@login_required
 def update_student(request):
 
     if request.method == 'POST':
