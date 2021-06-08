@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% block title %}
     Students List
@@ -65,8 +66,8 @@
                   <div class="modal-body">
                       <form style="display: flex; flex-direction: column" id="evaluationsform" action="{% url 'create_rubro' %}" method="POST">
                           {% csrf_token %}
-
-                          {{ rubro_form }}<br>
+                          {{ rubro_form }}
+                          <br>
 
                           <input type="submit"  class="btn btn-primary" value="Agregar">
                       </form>
@@ -93,7 +94,7 @@
                       <form style="display: flex; flex-direction: column" id="evaluationsform" action="{% url 'delete_rubro' %}" method="POST">
                           {% csrf_token %}
 
-                          {{ rubro_from }}<br>
+                          {{ rubro_form }}<br>
 
                           <input type="submit"  class="btn btn-primary" value="Eliminar">
                       </form>

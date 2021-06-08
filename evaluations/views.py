@@ -20,11 +20,13 @@ class Evaluations(ListView):
 def list_evaluation(request):
     evaluations_list = Evaluation.objects.all()
     form_evaluation = FormEvaluation()
+    rubro_form = FormRubro()
 
     return render(request, template_name='evaluations.html',
                   context={
                       'evaluations_list': evaluations_list,
-                      'form': form_evaluation
+                      'form': form_evaluation,
+                      'rubro_form':rubro_form,
                   })
 
 @login_required
