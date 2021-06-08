@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from students.models import Student
 from students.forms import FormStudent
 from random import randint
+
 # Create your views here.
 
 

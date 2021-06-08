@@ -28,8 +28,8 @@ class Student(models.Model):
     username = models.CharField(max_length=50, unique=True)
     dni = models.CharField(max_length=50, unique=True)
     vertical = models.ForeignKey(Vertical, on_delete=models.SET_NULL, null=True, blank=True)
-    cohort = models.ForeignKey(Cohort, null=True, on_delete=models.SET_NULL)
-    team = models.ForeignKey(Team, null=True, on_delete=models.SET_NULL)
+    cohort = models.ForeignKey(Cohort, null=True, on_delete=models.SET_NULL, blank=True)
+    team = models.ForeignKey(Team, null=True, on_delete=models.SET_NULL, blank= True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
