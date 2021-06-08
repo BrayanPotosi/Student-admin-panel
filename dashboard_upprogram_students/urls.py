@@ -15,10 +15,26 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include, re_path
+from auth.views import HomeView
+from students import views as student_views
+from students.views import list_students
+from evaluations import views as evaluations_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('auth.urls', namespace='auth')),
     re_path('', include('evaluations.urls')),
-    re_path('', include('students.urls'))
+    re_path('', include('students.urls')),
+    path('oauth/', include('social_django.urls', namespace='social')),
+    path('', HomeView, name='home'),
+    path('students/', list_students, name='students'),
+    path('create-student', student_views.create_student, name='create'),
+    path('delete-student', student_views.delete_student, name='delete'),
+    path('update-student', student_views.update_student, name='update'),
+    path('evaluations', evaluations_views.list_evaluation, name='evaluations'),
+    path('create-evaluation', evaluations_views.create_evaluation, name='create_evaluation'),
+    path('delete-evaluation', evaluations_views.delete_evaluation, name='delete_evaluation'),
+    path('update-evaluation', evaluations_views.update_evaluation, name='update_evaluation'),
+    path('create-rubro', evaluations_views.create_rubro, name='create_rubro'),
+    path('delete-rubro', evaluations_views.delete_rubro, name='delete_rubro' )
 ]

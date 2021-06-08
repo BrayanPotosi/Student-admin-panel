@@ -1,6 +1,12 @@
+from django.http.response import HttpResponse
 from django.shortcuts import redirect, render
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.decorators import login_required
+
+@login_required
+def HomeView(request):
+    return redirect('students')
 
 """Logout view"""
 def logout_view(request):
@@ -24,7 +30,7 @@ def login_view(request):
                 else:
                     alert_type = 'alert-success'
                     error_msn = 'Login succesfully'
-                    # return redirect('students:path_route_name')
+                    return redirect('students')
         else:
             alert_type = 'alert-danger'
             error_msn = 'Ups!! something went worong'
