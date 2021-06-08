@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Students List</title>
+    <title>Evaluations List</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
@@ -23,7 +23,7 @@
         <a class="nav-link" href="{% url 'students' %}">Estudiantes <span class="sr-only">(current)</span></a>
       </li>
         <li class="nav-item active">
-        <a class="nav-link" href="#">Evaluaciones <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{% url 'evaluations' %}">Evaluaciones <span class="sr-only">(current)</span></a>
       </li>
     </ul>
   </div>
@@ -31,13 +31,13 @@
 
     <hr class="mt-3 mb-3"/>
     <p style='text-align:center; font-weight: bold'>
-        Bienvenido al panel de administracion de estudiantes </p>
+        Bienvenido al panel de administracion de Evaluaciones </p>
     <hr class="mt-3 mb-3"/>
 
 
     <div class="container">
 
-        <form style="display: flex; flex-direction: column" id="studentsform3" action="{% url 'update' %}" method="POST">
+        <form style="display: flex; flex-direction: column" id="evaluationsform3" action="{% url 'update_evaluation' %}" method="POST">
             {% csrf_token %}
 
             {{ update_form }}<br>

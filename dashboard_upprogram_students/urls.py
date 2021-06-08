@@ -30,5 +30,7 @@ urlpatterns = [
     path('evaluations', evaluations_views.list_evaluation, name='evaluations'),
     path('create-evaluation', evaluations_views.create_evaluation, name='create_evaluation'),
     path('delete-evaluation', evaluations_views.delete_evaluation, name='delete_evaluation'),
-    path('update-evaluation', evaluations_views.update_evaluation, name='update_evaluation')
+    path('update-evaluation', evaluations_views.update_evaluation, name='update_evaluation'),
+    path('create-rubro', evaluations_views.create_rubro, name='create_rubro'),
+    path('delete-rubro', evaluations_views.delete_rubro, name='delete_rubro' )
 ]

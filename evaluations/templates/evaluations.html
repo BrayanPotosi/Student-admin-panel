@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Students List</title>
+    <title>Evaluations List</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
@@ -41,6 +41,14 @@
           Agregar Evaluacion
         </button>
 
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">
+          Agregar Rubro
+        </button>
+
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal3">
+          Eliminar Rubro
+        </button>
+
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -52,7 +60,7 @@
               </div>
 
               <div class="modal-body">
-                  <form style="display: flex; flex-direction: column" id="studentsform" action="{% url 'create_evaluation' %}" method="POST">
+                  <form style="display: flex; flex-direction: column" id="evaluationsform" action="{% url 'create_evaluation' %}" method="POST">
                       {% csrf_token %}
 
                       {{ form }}<br>
@@ -66,6 +74,60 @@
               </div>
             </div>
           </div>
+        </div>
+
+        <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Datos de Rubro</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+
+                  <div class="modal-body">
+                      <form style="display: flex; flex-direction: column" id="evaluationsform" action="{% url 'create_rubro' %}" method="POST">
+                          {% csrf_token %}
+
+                          {{ rubro_form }}<br>
+
+                          <input type="submit"  class="btn btn-primary" value="Agregar">
+                      </form>
+                  </div>
+
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                  </div>
+                </div>
+              </div>
+        </div>
+
+        <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Datos de Rubro</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+
+                  <div class="modal-body">
+                      <form style="display: flex; flex-direction: column" id="evaluationsform" action="{% url 'delete_rubro' %}" method="POST">
+                          {% csrf_token %}
+
+                          {{ rubro_from }}<br>
+
+                          <input type="submit"  class="btn btn-primary" value="Eliminar">
+                      </form>
+                  </div>
+
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                  </div>
+                </div>
+              </div>
         </div>
 
         <hr class="mt-3 mb-3"/>
@@ -94,13 +156,13 @@
                             <ul style="display: flex; list-style: none ">
 
                                 <li style="margin-right: 4%" >
-                                    <a href="{% url 'update' %}"><button type="button" class="btn btn-info" ><img src="https://i.imgur.com/bwSutQk.png"></button></a>
+                                    <a href="{% url 'update_evaluation' %}"><button type="button" class="btn btn-info" ><img src="https://i.imgur.com/bwSutQk.png"></button></a>
                                 </li>
 
                                 <li >
-                                    <form style="display: flex; flex-direction: column" id="delete_form" action="{% url 'delete' %}" method="POST">
+                                    <form style="display: flex; flex-direction: column" id="delete_form" action="{% url 'delete_evaluation' %}" method="POST">
                                         {% csrf_token %}
-                                        <button type="submit" name="deleteb" class="btn btn-danger" value="{{ student.id }}"><img src="https://i.imgur.com/8lphSfP.png"></button>
+                                        <button type="submit" name="deleteb" class="btn btn-danger" value="{{ evaluation.id }}"><img src="https://i.imgur.com/8lphSfP.png"></button>
                                     </form>
                                 </li>
                             </ul>

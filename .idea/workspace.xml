@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47a08d5d-8cff-41c7-8b1a-731d021f17ea" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard_upprogram_students/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard_upprogram_students/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evaluations/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluations/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/evaluations/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluations/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evaluations/templates/evaluations.html" beforeDir="false" afterPath="$PROJECT_DIR$/evaluations/templates/evaluations.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evaluations/templates/update_evaluation.html" beforeDir="false" afterPath="$PROJECT_DIR$/evaluations/templates/update_evaluation.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/evaluations/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluations/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/students/templates/students.html" beforeDir="false" afterPath="$PROJECT_DIR$/students/templates/students.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/students/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/students/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
