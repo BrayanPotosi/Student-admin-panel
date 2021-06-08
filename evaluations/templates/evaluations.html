@@ -31,28 +31,28 @@
 
     <hr class="mt-3 mb-3"/>
     <p style='text-align:center; font-weight: bold'>
-        Bienvenido al panel de administracion de estudiantes </p>
+        Bienvenido al panel de administracion de Evaluaciones </p>
     <hr class="mt-3 mb-3"/>
 
 
     <div class="container">
 
         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
-          Agregar Estudiante
+          Agregar Evaluacion
         </button>
 
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Datos del estudiante</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Datos de evaluacion</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
 
               <div class="modal-body">
-                  <form style="display: flex; flex-direction: column" id="studentsform" action="{% url 'create' %}" method="POST">
+                  <form style="display: flex; flex-direction: column" id="studentsform" action="{% url 'create_evaluation' %}" method="POST">
                       {% csrf_token %}
 
                       {{ form }}<br>
@@ -72,28 +72,24 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Apellido</th>
+                    <th scope="col">id</th>
+                    <th scope="col">Rubro</th>
                     <th scope="col">Identificacion</th>
-                    <th scope="col">Username</th>
-                    <th scope="col">Vertical</th>
-                    <th scope="col">Cohort</th>
-                    <th scope="col">Equipo</th>
-                    <th scope="col"></th>
+                    <th scope="col">Nombre Estudiante</th>
+                    <th scope="col">Apellido Estudiante</th>
+                    <th scope="col">Calificacion</th>
                 </tr>
             </thead>
             <tbody>
-                {% for student in students_list  %}
+                {% for evaluation in evaluations_list  %}
                     <tr>
-                        <td>{{ student.id }}</td>
-                        <td>{{ student.first_name }}</td>
-                        <td>{{ student.last_name }}</td>
-                        <td>{{ student.dni }}</td>
-                        <td>{{ student.username}}</td>
-                        <td>{{ student.vertical.name }}</td>
-                        <td>{{ student.cohort.name }}</td>
-                        <td>{{ student.team.name }}</td>
+                        <td>{{ evaluation.id }}</td>
+                        <td>{{ evaluation.rubro.name }}</td>
+                        <td>{{ evaluation.student.dni }}</td>
+                        <td>{{ evaluation.student.first_name }}</td>
+                        <td>{{ evaluation.student.last_name }}</td>
+                        <td>{{ evaluation.score }}</td>
+
                         <td>
                             <ul style="display: flex; list-style: none ">
 
