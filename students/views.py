@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect, HttpResponse
+from django.contrib.auth.decorators import login_required
+
 from students.models import Student
 from students.forms import FormStudent
 from random import randint
+
 # Create your views here.
-
-
+@login_required
 def list_students(request):
     students_list = Student.objects.all()
     form_student = FormStudent()

@@ -154,7 +154,7 @@ USE_TZ = True
 # AUTH
 LOGIN_URL = '/login/'
 LOGOUT_URL ='/logout/'
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'students'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/

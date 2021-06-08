@@ -6,3 +6,7 @@
 .social-btn button a {
     text-decoration: none;
 }
+
+.social-btn button:hover {
+    background-color: rgba(0,123,255,0.2);
+}
