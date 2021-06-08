@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="47a08d5d-8cff-41c7-8b1a-731d021f17ea" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard_upprogram_students/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluations/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluations/templates/evaluations.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluations/templates/update_evaluation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard_upprogram_students/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard_upprogram_students/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evaluations/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluations/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evaluations/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluations/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/students/templates/students.html" beforeDir="false" afterPath="$PROJECT_DIR$/students/templates/students.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/students/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/students/views.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="1tTNje0yFrYBGmGjDhpkksCh5PM" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="sqlite" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/evaluations" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\UserName\Desktop\django\UpProgram\dashboard-upprogram-students\evaluations" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="dashboard-upprogram-students" type="Python.DjangoServer" factoryName="Django server">
+      <module name="dashboard-upprogram-students" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="dashboard_upprogram_students.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="47a08d5d-8cff-41c7-8b1a-731d021f17ea" name="Default Changelist" comment="" />
+      <created>1622789256804</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1622789256804</updated>
+      <workItem from="1622789258708" duration="99000" />
+      <workItem from="1622825341400" duration="5057000" />
+      <workItem from="1622850397705" duration="3133000" />
+      <workItem from="1622899589000" duration="22753000" />
+      <workItem from="1622996598069" duration="18324000" />
+      <workItem from="1623029091994" duration="6635000" />
+      <workItem from="1623101227120" duration="7727000" />
+      <workItem from="1623092885027" duration="2804000" />
+      <workItem from="1623095748059" duration="32840000" />
+    </task>
+    <task id="LOCAL-00001" summary="[ADD] Form to register student in: students template">
+      <created>1623010417937</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1623010417937</updated>
+    </task>
+    <task id="LOCAL-00002" summary="[ADD] View to register new students on: students app">
+      <created>1623017948126</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1623017948126</updated>
+    </task>
+    <task id="LOCAL-00003" summary="[ADD] forms.py file and create Student form">
+      <created>1623092393517</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1623092393517</updated>
+    </task>
+    <task id="LOCAL-00004" summary="[UPDATE] form Student was included">
+      <created>1623092488437</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1623092488437</updated>
+    </task>
+    <task id="LOCAL-00005" summary="[ADD] remove path included">
+      <created>1623092539036</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1623092539036</updated>
+    </task>
+    <task id="LOCAL-00006" summary="[ADD] delete student view">
+      <created>1623092568766</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1623092568766</updated>
+    </task>
+    <task id="LOCAL-00007" summary="[ADD] delete student view">
+      <created>1623094272522</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1623094272522</updated>
+    </task>
+    <task id="LOCAL-00008" summary="[UPDATE] Model behavior on_delete action">
+      <created>1623096604861</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1623096604861</updated>
+    </task>
+    <task id="LOCAL-00009" summary="[UPDATE] Model behavior on_delete action">
+      <created>1623096613614</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1623096613614</updated>
+    </task>
+    <task id="LOCAL-00010" summary="[ADD] Evaluations menu in navbar">
+      <created>1623096697282</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1623096697282</updated>
+    </task>
+    <task id="LOCAL-00011" summary="[ADD] Error validations in form in: Students app">
+      <created>1623101149175</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1623101149175</updated>
+    </task>
+    <task id="LOCAL-00012" summary="[UPDATE] Exceptions in create students on: app students">
+      <created>1623109297370</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1623109297370</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="[ADD] Form to register student in: students template" />
+    <MESSAGE value="[ADD] View to register new students on: students app" />
+    <MESSAGE value="[ADD] forms.py file and create Student form" />
+    <MESSAGE value="[UPDATE] form Student was included" />
+    <MESSAGE value="[ADD] remove path included" />
+    <MESSAGE value="[ADD] delete student view" />
+    <MESSAGE value="[UPDATE] Model behavior on_delete action" />
+    <MESSAGE value="[ADD] Evaluations menu in navbar" />
+    <MESSAGE value="[ADD] Error validations in form in: Students app" />
+    <MESSAGE value="[UPDATE] Exceptions in create students on: app students" />
+    <option name="LAST_COMMIT_MESSAGE" value="[UPDATE] Exceptions in create students on: app students" />
+  </component>
+</project>

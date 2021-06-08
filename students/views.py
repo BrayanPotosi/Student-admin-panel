@@ -56,7 +56,7 @@ def create_student(request):
                               'students_list': students_list,
                           })
     else:
-        return HttpResponse('Error: Get method is not allowed')
+        return HttpResponse('Error: this method is not allowed')
 
 
 def delete_student(request):
