@@ -11,6 +11,9 @@ class FormStudent(forms.Form):
     cohort = forms.ModelChoiceField(queryset=Cohort.objects.all())
     team = forms.ModelChoiceField(queryset=Team.objects.all())
 
+
+class FormStudentCreate(FormStudent):
+
     def clean_dni(self):
         """identification field must be unique"""
         dni = self.cleaned_data['dni']
@@ -20,3 +23,18 @@ class FormStudent(forms.Form):
             raise forms.ValidationError('Ya existe un usuario con esa identificacion registrado')
 
         return dni
+
+
+class FormStudentUpdate(FormStudent):
+
+    def clean_dni(self):
+        """identification field must be exist"""
+        dni = self.cleaned_data['dni']
+        dni_exists = Student.objects.filter(dni=dni).exists()
+
+        if not dni_exists:
+            raise forms.ValidationError('No existe un usuario con esa identificacion')
+
+        return dni
+
+
