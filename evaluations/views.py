@@ -1,10 +1,20 @@
-from django.shortcuts import render, redirect, HttpResponse
+
+from django.shortcuts import render,  redirect, HttpResponse
+from django.views.generic import ListView
+from .models import Evaluation, Rubro
 from django.contrib.auth.decorators import login_required
-from evaluations.models import Evaluation, Rubro
+
 
 from evaluations.forms import FormEvaluation, FormRubro,\
     FormEvaluationCreate, FormEvaluationUpdate, FormRubroCreate, FormRubroDelete
-# Create your views here.
+
+#Lista todas las evaluaciones en template
+class Evaluations(ListView):
+    template_name = "evaluations/evaluations.html"
+    context_object_name = 'evaluations'
+
+    def get_queryset(self):
+        return Evaluation.objects.all()
 
 @login_required
 def list_evaluation(request):
@@ -143,3 +153,4 @@ def delete_rubro(request):
                           })
 
     return redirect('evaluations')
+
