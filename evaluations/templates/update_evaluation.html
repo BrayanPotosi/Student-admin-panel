@@ -13,7 +13,7 @@
 
     <div class="container">
 
-        <form style="display: flex; flex-direction: column" id="evaluationsform3" action="{% url 'update_evaluation' %}" method="POST">
+        <form style="display: flex; flex-direction: column" id="evaluationsform3" action="{% url 'update_evaluation'%}" method="POST">
             {% csrf_token %}
 
             {{ update_form }}<br>

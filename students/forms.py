@@ -25,16 +25,21 @@ class FormStudentCreate(FormStudent):
         return dni
 
 
-class FormStudentUpdate(FormStudent):
+class FormStudentUpdate(forms.ModelForm):
 
-    def clean_dni(self):
-        """identification field must be exist"""
-        dni = self.cleaned_data['dni']
-        dni_exists = Student.objects.filter(dni=dni).exists()
+    class Meta:
+        model =  Student
+        exclude = ('created', 'updated',)
 
-        if not dni_exists:
-            raise forms.ValidationError('No existe un usuario con esa identificacion')
 
-        return dni
+    # def clean_dni(self):
+    #     """identification field must be exist"""
+    #     dni = self.cleaned_data['dni']
+    #     dni_exists = Student.objects.filter(dni=dni).exists()
+
+    #     if not dni_exists:
+    #         raise forms.ValidationError('No existe un usuario con esa identificacion')
+
+    #     return dni
 
 

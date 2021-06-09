@@ -69,11 +69,15 @@ def delete_student(request):
     return redirect('students')
 
 @login_required
-def update_student(request):
+def update_student(request, pk):
+    student = Student.objects.get(pk=pk)
+    student_form = FormStudentUpdate(request.POST or None, instance=student)
 
+    context = {
+            'update_form': student_form,
+            'student':student,
+        }
     if request.method == 'POST':
-
-        student_form = FormStudentUpdate(request.POST)
 
         if student_form.is_valid():
 
@@ -99,8 +103,7 @@ def update_student(request):
             return redirect('students')
 
         else:
-            return render(request, template_name='update_student.html', context={'update_form': student_form})
+            return render(request, template_name='update_student.html', context=context)
 
     else:
-        student_form = FormStudentUpdate()
-        return render(request, template_name='update_student.html', context={'update_form': student_form})
+        return render(request, template_name='update_student.html', context=context)

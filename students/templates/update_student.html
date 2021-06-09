@@ -7,13 +7,13 @@
 {% block content %}
     <hr class="mt-3 mb-3"/>
     <p style='text-align:center; font-weight: bold'>
-        Bienvenido al panel de administracion de estudiantes </p>
+        Bienvenido al panel de administracion de estudiantes</p>
     <hr class="mt-3 mb-3"/>
 
 
     <div class="container">
 
-        <form style="display: flex; flex-direction: column" id="studentsform3" action="{% url 'update' %}" method="POST">
+        <form style="display: flex; flex-direction: column" id="studentsform3" action="{% url 'update' student.id%}" method="POST">
             {% csrf_token %}
 
             {{ update_form }}<br>
