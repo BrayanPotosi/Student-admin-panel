@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="47a08d5d-8cff-41c7-8b1a-731d021f17ea" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard_upprogram_students/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard_upprogram_students/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evaluations/templates/evaluations.html" beforeDir="false" afterPath="$PROJECT_DIR$/evaluations/templates/evaluations.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/evaluations/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluations/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -98,6 +100,7 @@
       <workItem from="1623101227120" duration="7727000" />
       <workItem from="1623092885027" duration="2804000" />
       <workItem from="1623095748059" duration="32840000" />
+      <workItem from="1623256928840" duration="296000" />
     </task>
     <task id="LOCAL-00001" summary="[ADD] Form to register student in: students template">
       <created>1623010417937</created>

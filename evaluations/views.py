@@ -123,11 +123,11 @@ def create_rubro(request):
 @login_required
 def delete_rubro(request):
 
+    evaluations_list = Evaluation.objects.all()
+
     if request.method == 'POST':
 
-        evaluations_list = Evaluation.objects.all()
         rubro_form = FormRubroDelete(request.POST)
-
 
         if rubro_form.is_valid():
 
@@ -135,11 +135,16 @@ def delete_rubro(request):
             rubro = Rubro.objects.get(pk=rubro_id)
             rubro.delete()
 
+            return redirect('evaluations')
+
         else:
             return render(request, template_name='evaluations.html',
                           context={
                               'rubro_from': rubro_form,
                               'evaluations_list': evaluations_list
+
+
                           })
 
-    return redirect('evaluations')
+    rubro_form = FormRubro()
+    return render(request, template_name='evaluations.html', context={'delete_form': rubro_form})

@@ -93,7 +93,7 @@
                       <form style="display: flex; flex-direction: column" id="evaluationsform" action="{% url 'delete_rubro' %}" method="POST">
                           {% csrf_token %}
 
-                          {{ rubro_from }}<br>
+                          {{ delete_form }}<br>
 
                           <input type="submit"  class="btn btn-primary" value="Eliminar">
                       </form>
