@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% block title %}
-    Students List
+    Evaluations List
 {% endblock title %}
 
 {% block content %}
@@ -65,8 +66,8 @@
                   <div class="modal-body">
                       <form style="display: flex; flex-direction: column" id="evaluationsform" action="{% url 'create_rubro' %}" method="POST">
                           {% csrf_token %}
-
-                          {{ rubro_form }}<br>
+                          {{ rubro_form }}
+                          <br>
 
                           <input type="submit"  class="btn btn-primary" value="Agregar">
                       </form>
@@ -93,7 +94,9 @@
                       <form style="display: flex; flex-direction: column" id="evaluationsform" action="{% url 'delete_rubro' %}" method="POST">
                           {% csrf_token %}
 
-                          {{ delete_form }}<br>
+
+                          {{ rubro_delete_form }}<br>
+
 
                           <input type="submit"  class="btn btn-primary" value="Eliminar">
                       </form>
@@ -132,7 +135,7 @@
                             <ul style="display: flex; list-style: none ">
 
                                 <li style="margin-right: 4%" >
-                                    <a href="{% url 'update_evaluation' %}"><button type="button" class="btn btn-info" ><img src="https://i.imgur.com/bwSutQk.png"></button></a>
+                                    <a href="{% url 'update_evaluation' evaluation.id %}"><button type="button" class="btn btn-info" ><img src="https://i.imgur.com/bwSutQk.png"></button></a>
                                 </li>
 
                                 <li >

@@ -1,20 +1,34 @@
-from django.shortcuts import render, redirect, HttpResponse
+
+from django.shortcuts import render,  redirect, HttpResponse
+from django.views.generic import ListView
+from .models import Evaluation, Rubro
 from django.contrib.auth.decorators import login_required
-from evaluations.models import Evaluation, Rubro
+
 
 from evaluations.forms import FormEvaluation, FormRubro,\
     FormEvaluationCreate, FormEvaluationUpdate, FormRubroCreate, FormRubroDelete
-# Create your views here.
+
+#Lista todas las evaluaciones en template
+class Evaluations(ListView):
+    template_name = "evaluations/evaluations.html"
+    context_object_name = 'evaluations'
+
+    def get_queryset(self):
+        return Evaluation.objects.all()
 
 @login_required
 def list_evaluation(request):
     evaluations_list = Evaluation.objects.all()
     form_evaluation = FormEvaluation()
+    rubro_form = FormRubro()
+    rubro_delete_form = FormRubroDelete()
 
     return render(request, template_name='evaluations.html',
                   context={
                       'evaluations_list': evaluations_list,
-                      'form': form_evaluation
+                      'form': form_evaluation,
+                      'rubro_form':rubro_form,
+                      'rubro_delete_form': rubro_delete_form,
                   })
 
 @login_required
@@ -62,16 +76,22 @@ def delete_evaluation(request):
     return redirect('evaluations')
 
 @login_required
-def update_evaluation(request):
+def update_evaluation(request, pk):
+
+    evaluation = Evaluation.objects.get(pk=pk)
+    evaluation_form = FormEvaluationUpdate(request.POST or None, instance=evaluation)
+
+    context = {
+        'update_form': evaluation_form,
+        'evaluation': evaluation,
+    }
 
     if request.method == 'POST':
-
-        evaluation_form = FormEvaluationUpdate(request.POST)
 
         if evaluation_form.is_valid():
 
             data_form = evaluation_form.cleaned_data
-            evaluation_id = request.POST.get('evaluation_id')
+            evaluation_id = pk
             rubro = data_form['rubro']
             score = data_form['score']
             student = request.POST.get('student')
@@ -85,11 +105,10 @@ def update_evaluation(request):
             return redirect('evaluations')
 
         else:
-            return render(request, template_name='update_evaluation.html', context={'update_form': evaluation_form})
+            return render(request, template_name='update_evaluation.html', context=context)
 
     else:
-        evaluation_form = FormEvaluationUpdate()
-        return render(request, template_name='update_evaluation.html', context={'update_form': evaluation_form})
+        return render(request, template_name='update_evaluation.html', context=context)
 
 @login_required
 def create_rubro(request):
@@ -146,5 +165,5 @@ def delete_rubro(request):
 
                           })
 
-    rubro_form = FormRubro()
-    return render(request, template_name='evaluations.html', context={'delete_form': rubro_form})
+    return redirect('evaluations')
+

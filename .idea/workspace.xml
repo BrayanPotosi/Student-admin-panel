@@ -2,10 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47a08d5d-8cff-41c7-8b1a-731d021f17ea" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluations/api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluations/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluations/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/students/api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/students/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/students/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/evaluations/evaluations.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard_upprogram_students/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard_upprogram_students/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard_upprogram_students/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard_upprogram_students/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evaluations/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluations/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evaluations/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluations/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/evaluations/templates/evaluations.html" beforeDir="false" afterPath="$PROJECT_DIR$/evaluations/templates/evaluations.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evaluations/templates/update_evaluation.html" beforeDir="false" afterPath="$PROJECT_DIR$/evaluations/templates/update_evaluation.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/evaluations/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluations/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/students/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/students/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/students/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/students/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/students/templates/students.html" beforeDir="false" afterPath="$PROJECT_DIR$/students/templates/students.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/students/templates/update_student.html" beforeDir="false" afterPath="$PROJECT_DIR$/students/templates/update_student.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/students/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/students/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +66,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/evaluations" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -101,6 +120,7 @@
       <workItem from="1623092885027" duration="2804000" />
       <workItem from="1623095748059" duration="32840000" />
       <workItem from="1623256928840" duration="296000" />
+      <workItem from="1623370689303" duration="188000" />
     </task>
     <task id="LOCAL-00001" summary="[ADD] Form to register student in: students template">
       <created>1623010417937</created>
