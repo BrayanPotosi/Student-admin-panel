@@ -29,10 +29,9 @@ class Student(models.Model):
     dni = models.CharField(max_length=50, unique=True)
     vertical = models.ForeignKey(Vertical, on_delete=models.SET_NULL, null=True, blank=True)
     cohort = models.ForeignKey(Cohort, null=True, on_delete=models.SET_NULL, blank=True)
-    team = models.ForeignKey(Team, null=True, on_delete=models.SET_NULL, blank= True)
+    team = models.ForeignKey(Team, null=True, on_delete=models.SET_NULL, blank=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return f'{self.id}, {self.first_name} {self.last_name} {self.dni} {self.vertical}, {self.cohort}, {self.team}, {self.created}'
-
