@@ -1,61 +1,70 @@
-﻿from rest_framework.generics import (
+﻿# Rest Framework
+from rest_framework.generics import (
     ListAPIView,
     CreateAPIView,
     RetrieveAPIView,
     DestroyAPIView,
     RetrieveUpdateAPIView,
 )
-
+# Models
 from .models import Evaluation, Rubro
+
+# Serializers
 from .serializers import EvaluationsSerializer, RubroSerializer, EvaluationsSerializerSimple
 
 
-
-#Lista Evaluaciones en JSON
+# Lista evaluations JSON
 class EvaluationsListAPIView(ListAPIView):
     serializer_class = EvaluationsSerializer
 
     def get_queryset(self):
         return Evaluation.objects.all()
 
-#Crea una evaluacion
+
+# Create evaluation
 class EvaluationCreateView(CreateAPIView):
     serializer_class = EvaluationsSerializerSimple
 
-#Busca una Evaluacion por ID
+
+# Search evaluation by id
 class EvaluationRetrieveAPIView(RetrieveAPIView):
     serializer_class = EvaluationsSerializer
     queryset = Evaluation.objects.filter()
 
-#Borrar Evaluacion con ID
+
+# Delete evaluation by ID
 class EvaluationDeleteAPIView(DestroyAPIView):
     serializer_class = EvaluationsSerializer
     queryset = Evaluation.objects.all()
 
-#Actualizar Evaluacion
+
+# Update evaluation
 class EvaluationUpdateAPIView(RetrieveUpdateAPIView):
     serializer_class = EvaluationsSerializerSimple
     queryset = Evaluation.objects.all()
 
-#========================#
-#Lista Rubros en JSON
+
+# ========================#
+# List Rubros en JSON
 class RubroListAPIView(ListAPIView):
     serializer_class = RubroSerializer
 
     def get_queryset(self):
         return Rubro.objects.all()
 
-#Crea un rubro
+
+# Create rubro
 class RubroCreateView(CreateAPIView):
     serializer_class = RubroSerializer
 
 
-#Borrar rubro con ID
+# Delete rubro by ID
 class RubroDeleteAPIView(DestroyAPIView):
     serializer_class = RubroSerializer
     queryset = Rubro.objects.all()
 
-#Actualizar rubro
+
+# Update rubro
 class RubroUpdateAPIView(RetrieveUpdateAPIView):
     serializer_class = RubroSerializer
     queryset = Rubro.objects.all()
