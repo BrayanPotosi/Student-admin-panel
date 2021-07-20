@@ -3,10 +3,9 @@ from students.models import Student, Vertical, Cohort, Team
 
 
 class FormStudent(forms.Form):
-
     first_name = forms.CharField(label='Nombre', min_length=3, max_length=20, )
     last_name = forms.CharField(label='Apellido', min_length=3, max_length=20)
-    dni = forms.IntegerField(label='Identificacion',min_value=1000, max_value=9999999999)
+    dni = forms.IntegerField(label='Identificacion', min_value=1000, max_value=9999999999)
     vertical = forms.ModelChoiceField(queryset=Vertical.objects.all())
     cohort = forms.ModelChoiceField(queryset=Cohort.objects.all())
     team = forms.ModelChoiceField(queryset=Team.objects.all())
@@ -26,11 +25,9 @@ class FormStudentCreate(FormStudent):
 
 
 class FormStudentUpdate(forms.ModelForm):
-
     class Meta:
-        model =  Student
+        model = Student
         exclude = ('created', 'updated',)
-
 
     # def clean_dni(self):
     #     """identification field must be exist"""
@@ -41,5 +38,3 @@ class FormStudentUpdate(forms.ModelForm):
     #         raise forms.ValidationError('No existe un usuario con esa identificacion')
 
     #     return dni
-
-

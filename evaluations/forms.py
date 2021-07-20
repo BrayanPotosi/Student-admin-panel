@@ -1,17 +1,20 @@
+# Urls
+from django.urls.conf import include
+
+# Forms
 from django import forms
 from django.forms import fields
-from django.urls.conf import include
+
+# Models
 from evaluations.models import Rubro, Evaluation
 from students.models import Student
 
 
 class FormRubro(forms.Form):
-
     name = forms.CharField(label='Nombre')
 
 
 class FormRubroCreate(FormRubro):
-
     name = forms.CharField(label='Nombre')
 
     def clean_name(self):
@@ -30,7 +33,6 @@ class FormRubroDelete(FormRubro):
 
 
 class FormEvaluation(forms.Form):
-
     rubro = forms.ModelChoiceField(queryset=Rubro.objects.all())
     score = forms.IntegerField(label='Calificacion', min_value=0, max_value=100)
     student = forms.ModelChoiceField(queryset=Student.objects.all())
@@ -39,9 +41,9 @@ class FormEvaluation(forms.Form):
 class FormEvaluationCreate(FormEvaluation):
     pass
 
+
 # evaluation form to update
 class FormEvaluationUpdate(forms.ModelForm):
-
     class Meta:
         model = Evaluation
 
