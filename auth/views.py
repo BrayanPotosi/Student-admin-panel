@@ -1,17 +1,23 @@
+# Django
 from django.http.response import HttpResponse
 from django.shortcuts import redirect, render
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
 
+
 @login_required
 def HomeView(request):
     return redirect('students')
 
+
 """Logout view"""
+
+
 def logout_view(request):
     logout(request)
     return redirect('auth:login')
+
 
 def login_view(request):
     error_msn = None
@@ -36,8 +42,8 @@ def login_view(request):
             error_msn = 'Ups!! something went worong'
 
     context = {
-        'form':form,
-        'error_msn':error_msn,
+        'form': form,
+        'error_msn': error_msn,
         'alert_type': alert_type,
     }
     return render(request, 'auth/login.html', context)

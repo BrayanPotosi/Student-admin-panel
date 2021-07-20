@@ -1,11 +1,16 @@
+# Django
 from django.shortcuts import render, redirect, HttpResponse
 from django.contrib.auth.decorators import login_required
 
-from students.models import Student
+# Forms
 from students.forms import FormStudent, FormStudentCreate, FormStudentUpdate
+
+# Models
+from students.models import Student
+
 from random import randint
 
-# Create your views here.
+
 @login_required
 def list_students(request):
     students_list = Student.objects.all()
@@ -17,9 +22,9 @@ def list_students(request):
                       'form': form_student
                   })
 
+
 @login_required
 def create_student(request):
-
     if request.method == 'POST':
 
         student_form = FormStudentCreate(request.POST)
@@ -58,9 +63,9 @@ def create_student(request):
     else:
         return HttpResponse('Error: this method is not allowed')
 
+
 @login_required
 def delete_student(request):
-
     if request.method == 'POST':
         student_id = request.POST.get('deleteb')
         student = Student.objects.get(pk=student_id)
@@ -68,15 +73,16 @@ def delete_student(request):
 
     return redirect('students')
 
+
 @login_required
 def update_student(request, pk):
     student = Student.objects.get(pk=pk)
     student_form = FormStudentUpdate(request.POST or None, instance=student)
 
     context = {
-            'update_form': student_form,
-            'student':student,
-        }
+        'update_form': student_form,
+        'student': student,
+    }
     if request.method == 'POST':
 
         if student_form.is_valid():
