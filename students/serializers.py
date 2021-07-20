@@ -6,6 +6,7 @@ from .models import (
     Student,
 )
 
+
 class VerticalSerializer(serializers.ModelSerializer):
     class Meta:
         model = Vertical
@@ -13,6 +14,7 @@ class VerticalSerializer(serializers.ModelSerializer):
             'id',
             'name'
         )
+
 
 class TeamSerializer(serializers.ModelSerializer):
     class Meta:
@@ -22,6 +24,7 @@ class TeamSerializer(serializers.ModelSerializer):
             'name'
         )
 
+
 class CohortSerializer(serializers.ModelSerializer):
     class Meta:
         model = Cohort
@@ -30,15 +33,18 @@ class CohortSerializer(serializers.ModelSerializer):
             'name'
         )
 
+
 class StudentSerializer(serializers.ModelSerializer):
     vertical = TeamSerializer()
     cohort = CohortSerializer()
     team = TeamSerializer()
+
     class Meta:
         model = Student
-        fields = ('__all__')
+        fields = '__all__'
+
 
 class StudentSerializerSimple(serializers.ModelSerializer):
     class Meta:
         model = Student
-        fields = ('__all__')
+        fields = '__all__'

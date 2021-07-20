@@ -1,4 +1,7 @@
-﻿from rest_framework import serializers
+﻿# Rest framework
+from rest_framework import serializers
+
+# Models
 from .models import Evaluation, Rubro
 
 
@@ -22,8 +25,8 @@ class EvaluationsSerializer(serializers.ModelSerializer):
             'updated'
         )
 
-class EvaluationsSerializerSimple(serializers.ModelSerializer):
 
+class EvaluationsSerializerSimple(serializers.ModelSerializer):
     class Meta:
         model = Evaluation
         fields = (
